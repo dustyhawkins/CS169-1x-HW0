@@ -24,7 +24,6 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
   "Hello, " + name
 end
 
@@ -35,13 +34,24 @@ end
 def binary_multiple_of_4? s
   return false if s.empty?
   return true if (s.length == 1 && s == "0")
-  
-  #Check if the last 2 digt's are 0's only
   return (s =~ /00\z/ && s =~ /\A[0|1]{3,}\z/) 
 end
 
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+
+  attr_accessor :isbn
+  attr_accessor :price
+
+  def initialize(isbn, price)
+    raise ArgumentError if (isbn.empty? || price <= 0)
+    @isbn = isbn
+    @price = price
+  end
+
+  def price_as_string
+    return "$%.2f" % price
+  end
+
 end
