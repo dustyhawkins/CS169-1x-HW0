@@ -25,25 +25,19 @@ end
 
 def hello(name)
   # YOUR CODE HERE
-  "Hello " + name
+  "Hello, " + name
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
- 
- 
-    return true
+    return s =~ /\A[qwrtypsdfghjklzxcvbnm]{1}/i
 end
 
 def binary_multiple_of_4? s
   return false if s.empty?
- 
   return true if (s.length == 1 && s == "0")
   
   #Check if the last 2 digt's are 0's only
-  return s =~ ("00\z" && "\A[0|1]{3,}\z") 
-  
-
+  return (s =~ /00\z/ && s =~ /\A[0|1]{3,}\z/) 
 end
 
 # Part 3
